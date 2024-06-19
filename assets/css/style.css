@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #eee;
+  font-family: sans-serif;
+  font-size: 1.125rem;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.install-btn-container {
+  display: none;
+}
+
+#install {
+  border: 0.25em solid var(--link-color);
+  font-size: 1.5rem;
+  border: 0.25rem solid white;
+  box-shadow: 1px 1px 10px 5px hsla(0, 0%, 0%, 0.125);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  transition: 0.3s;
+  background-color: hsl(100, 50%, 40%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  text-decoration: none;
+  font-family: Calibri, sans-serif;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  max-width: 3rem;
+  max-height: 3rem;
+}
+
+#install:active {
+  box-shadow: inset 1px 1px 10px 5px hsla(0, 0%, 0%, 0.25),
+   1px 1px 10px 5px hsla(0, 0%, 0%, 0.125);
+}
+
+#install svg {
+  width: 2em;
+}
+
+#install span {
+  font-size: 1rem;
+  padding-top: 0.125rem;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#source-code {
+  border: 0.25em solid var(--link-color);
+  font-size: 1.5rem;
+  border: 0.25rem solid white;
+  box-shadow: 1px 1px 10px 5px hsla(0, 0%, 0%, 0.125);
+  border-radius: 2rem;
+  padding: 1rem;
+  transition: 0.3s;
+  background-color: hsl(270, 50%, 40%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: fit-content;
+  text-decoration: none;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  max-width: 4rem;
+  max-height: 4rem;
+  margin-left: auto;
+}
+
+#source-code:active {
+  box-shadow: inset 1px 1px 10px 5px hsla(0, 0%, 0%, 0.25),
+   1px 1px 10px 5px hsla(0, 0%, 0%, 0.125);
+}
+
+#source-code svg {
+  width: 2em;
+}
+
+#source-code span {
+  font-size: 0.75rem;
+  padding-top: 0.125rem;
+  text-align: center;
+}
