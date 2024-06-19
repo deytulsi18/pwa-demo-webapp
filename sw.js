@@ -1,17 +1,17 @@
 const OFFLINE_VERSION = 1;
-const CACHE_OFFLINE = "offline";
-const OFFLINE_URL = "/offline.html";
-const CACHE_PRIMARY = "primary";
-const PRIMARY_URL = "/primary.html";
+// const CACHE_OFFLINE = "offline";
+// const OFFLINE_URL = "/offline.html";
+const CACHE = "primary";
+const CACHE_URL = "/primary.html";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
-      // const cache = await caches.open(CACHE_OFFLINE);
-      // await cache.add(new Request(OFFLINE_URL, { cache: 'reload' }));
+      // const offlineCache = await caches.open(CACHE_OFFLINE);
+      // await offlineCache.add(new Request(OFFLINE_URL, { cache: "reload" }));
 
-      const cache = await caches.open(CACHE_PRIMARY);
-      await cache.add(new Request(PRIMARY_URL, { cache: "reload" }));
+      const cache = await caches.open(CACHE);
+      await cache.add(new Request(CACHE_URL, { cache: "reload" }));
     })()
   );
 });
@@ -43,11 +43,11 @@ self.addEventListener("fetch", (event) => {
         } catch (error) {
           console.log("Fetch failed; returning offline page instead.", error);
 
-          // const cache = await caches.open(CACHE_OFFLINE);
-          // const cachedResponse = await cache.match(OFFLINE_URL);
+          // const offlineCache = await caches.open(CACHE);
+          // const offlineCachedResponse = await offlineCache.match(CACHE_URL);
 
-          const cache = await caches.open(CACHE_PRIMARY);
-          const cachedResponse = await cache.match(PRIMARY_URL);
+          const cache = await caches.open(CACHE);
+          const cachedResponse = await cache.match(CACHE_URL);
 
           return cachedResponse;
         }
